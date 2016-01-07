@@ -1,25 +1,28 @@
 # CMPT 371 Assignment 2 - Pawned!
 ###Problem Description
 Pawned! is a simple game played on a 5×6 board. The game has two players, the “white” player, and the “black” player. Each player starts with 5 pawns on their own side, in the formation shown below:
+```
 b b b b b
 . . . . .
 . . . . .
 . . . . .
 . . . . .
 w w w w w
+```
 
 Where 'b's represent black pawns, 'w's represent white pawns, and '.'s represent empty spaces on the board.
 
 Like in chess, the white player goes first, and each player alternate taking turns which consist of a single move.  Each pawn in Pawned! has up to three movement options available to them on a given turn:
-Move forward
-Capture an enemy pawn diagonally (forward and to the left)
-Capture an enemy pawn diagonally (forward and to the right)
+* Move forward
+* Capture an enemy pawn diagonally (forward and to the left)
+* Capture an enemy pawn diagonally (forward and to the right)
+
 A pawn cannot capture an enemy piece directly in front of it, nor move diagonally if it is not capturing a piece. If none of a player's pawns are capable of moving, the player may pass. If any pawns are capable of moving, the player must move a pawn.
 
 A player wins in the following cases:
-One of their pawns reaches their opponent’s starting row
-Neither player can move, and the they have a larger number of pawns currently on the board
-If neither player can move, and neither of these cases have been met, the game is considered a draw.
+* One of their pawns reaches their opponent’s starting row
+* Neither player can move, and the they have a larger number of pawns currently on the board
+* If neither player can move, and neither of these cases have been met, the game is considered a draw.
 
 The goal of this project is to create an AI capable of playing Pawned! with a respectable degree of competency, and learn about creating AI which can play games with perfect information in the process.
 
