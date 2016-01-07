@@ -1,5 +1,5 @@
 # CMPT 317 Assignment 2 - Pawned!
-###Problem Description
+###Problem
 Pawned! is a simple game played on a 5×6 board. The game has two players, the “white” player, and the “black” player. Each player starts with 5 pawns on their own side, in the formation shown below:
 ```
 b b b b b
@@ -27,7 +27,7 @@ A player wins in the following cases:
 The goal of this project is to create an AI capable of playing Pawned! with a respectable degree of competency, and learn about creating AI which can play games with perfect information in the process.
 
 
-###Solution Description
+###Solution
 Pawned! falls within a subset of games which are deterministic, meaning that there is no luck or chance involved, fully observable, meaning that both players have complete information about the game's state, and competitive, meaning that utility values at the end of the game sum to 0.
 
 The most basic approach to creating an AI capable of playing a game of this type is to map the problem to a state space search, where the “solution” is reaching an end-game state where the computer’s utility value is higher than its opponent's (+1 for winning, -1 for losing, 0 for tie). Each possible move on a given turn can be mapped as a branch to an adjacent state, and the resulting tree structure can be searched to find these solution states. 
@@ -44,7 +44,7 @@ The second technique used to speed up search is alpha beta pruning. The basic id
 
 By employing techniques, we can create a program capable of quickly deciding upon good moves by both estimating the value of a board and thinking many turns ahead.
 
-###Implementation Description
+###Implementation
 To implement my solution, I started by first making a version of Pawned! which was playable by two humans. To do this, I created five major classes: Game, Board, Pawn, Player, and Human, as well as the enums Color and Move. The Game class handled setup of the game, delegating turns to players, and printed out the board after each turn. The Board class represented the game's state, and contained information about the position of pawns. The pawn class contained logic for individual pawns on what movements it could legally make given its position in relation to other pawns on the board. The abstract Player class contained information about the player's color, as well as an abstract function Player.move(), which which dictated the movement of pawns on the board. The Player class was made abstract so that it could be implemented by both a Human and Computer, allowing for flexibile configurations when setting up the game, allowing human versus human, human versus computer, and computer versus computer scenarios. The Human class implemented Player.move(), allowing for user input to dictate movement for pawns on the board which matched the player's color. After the game was implemented and made playable, extensive manual testing was done to ensure that only legal movements as dictated by the rules of Pawned! were possible. 
 
 Once the basic game was ensured to be working without issues, I created a simple successor function for Board, Board.successors(), which would return a list of boards, each of which was the current board with one of the possible legal moves from the current turn applied to it. Because this was based off of the Pawn's legal movement logic which had already been extensively tested, only minimal testing was required for the function.
