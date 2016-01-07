@@ -1,4 +1,4 @@
-# CMPT 371 Assignment 2 - Pawned!
+# CMPT 317 Assignment 2 - Pawned!
 ###Problem Description
 Pawned! is a simple game played on a 5×6 board. The game has two players, the “white” player, and the “black” player. Each player starts with 5 pawns on their own side, in the formation shown below:
 ```
